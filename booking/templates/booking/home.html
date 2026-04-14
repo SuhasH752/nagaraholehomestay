@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Nagarhole Homestay | Luxury Stay near Tiger Reserve</title>
+  <meta name="description" content="Experience tranquility at Nagarhole Homestay – wooden cottages, coffee estate walks, bonfire, and safari adventures. Your gateway to Nagarhole Tiger Reserve.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background-color: #fefcf7; color: #2d2a24; line-height: 1.5; scroll-behavior: smooth; }
+    h1, h2, h3, h4, .logo-text, .nav-links a { font-family: 'Playfair Display', serif; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; background: #2c6e3c; color: white; padding: 12px 28px; border-radius: 40px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; border: none; cursor: pointer; font-size: 0.95rem; letter-spacing: 0.3px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+    .btn-outline { background: transparent; border: 1.5px solid #2c6e3c; color: #2c6e3c; box-shadow: none; }
+    .btn-outline:hover { background: #2c6e3c; color: white; }
+    .btn:hover { background: #1f542c; transform: translateY(-3px); box-shadow: 0 12px 20px rgba(0,0,0,0.1); }
+    .site-header { background: rgba(255, 255, 245, 0.96); backdrop-filter: blur(2px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #e9e3d5; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; flex-wrap: wrap; gap: 20px; }
+    .logo-area { display: flex; align-items: center; gap: 12px; }
+    .logo-area img { height: 55px; width: auto; }
+    .logo-area span { font-size: 1.5rem; font-weight: 700; color: #2c6e3c; letter-spacing: -0.3px; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { text-decoration: none; font-weight: 500; color: #2d2a24; transition: color 0.2s; font-size: 1rem; }
+    .nav-links a:hover { color: #2c6e3c; }
+    .header-phone { background: #f0f2e9; padding: 8px 20px; border-radius: 60px; font-weight: 600; color: #1f542c; }
+    .header-phone i { margin-right: 8px; }
+    .mobile-toggle { display: none; font-size: 1.8rem; background: none; border: none; cursor: pointer; color: #2c6e3c; }
+    .hero { background: linear-gradient(105deg, #0a2f1f 0%, #1b4d2e 100%), url('https://www.nagarholehomestay.com/wp-content/uploads/2024/11/Large-Hammock-at-Homestay-scaled.jpeg'); background-size: cover; background-blend-mode: overlay; background-position: center 30%; padding: 100px 0 120px; color: white; text-align: center; }
+    .hero h1 { font-size: 3.8rem; font-weight: 800; margin-bottom: 16px; text-shadow: 0 2px 15px rgba(0,0,0,0.2); }
+    .hero p { font-size: 1.2rem; max-width: 750px; margin: 0 auto 28px; opacity: 0.9; }
+    .hero .address { background: rgba(0,0,0,0.5); display: inline-block; backdrop-filter: blur(4px); padding: 12px 28px; border-radius: 50px; font-size: 1rem; margin-top: 12px; }
+    section { padding: 80px 0; }
+    .section-title { text-align: center; margin-bottom: 48px; }
+    .section-title h2 { font-size: 2.5rem; color: #1e3a2f; display: inline-block; padding-bottom: 12px; position: relative; }
+    .section-title h2:after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 70px; height: 3px; background: #c0a56b; border-radius: 3px; }
+    .section-sub { text-align: center; color: #5f5b54; max-width: 700px; margin: 8px auto 0; }
+    .amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 28px; margin-top: 20px; }
+    .amenity-card { background: white; border-radius: 28px; padding: 24px 16px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.03); border: 1px solid #efeadf; transition: 0.25s; }
+    .amenity-card i { font-size: 2.4rem; color: #2c6e3c; margin-bottom: 14px; }
+    .amenity-card h4 { font-weight: 600; font-size: 1.1rem; }
+    .amenity-card:hover { transform: translateY(-6px); border-color: #d4cfc2; box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1); }
+    .facilities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; margin: 40px 0; }
+    .facility-card { background: white; border-radius: 32px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.05); transition: 0.2s; }
+    .facility-card:hover { transform: translateY(-6px); }
+    .facility-img { height: 240px; background-size: cover; background-position: center; }
+    .facility-content { padding: 28px 24px 32px; }
+    .facility-content h3 { font-size: 1.7rem; margin-bottom: 12px; }
+    .facility-content p { color: #4a4741; }
+    .testimonial { background: #eef3ea; text-align: center; border-radius: 48px; margin: 20px 24px; padding: 60px 24px; }
+    .stars { color: #f4b942; font-size: 1.6rem; margin-bottom: 20px; }
+    .testimonial i.fa-quote-right { font-size: 2.8rem; color: #b9ad8a; margin-bottom: 20px; display: inline-block; }
+    .testimonial p { font-size: 1.3rem; font-style: italic; max-width: 800px; margin: 0 auto 24px; color: #1f2e24; }
+    .cta-section { background: linear-gradient(115deg, #1e3a2f 0%, #2b5a3a 100%); color: white; text-align: center; border-radius: 48px; margin: 20px 24px 60px; padding: 64px 30px; }
+    .cta-section h2 { font-size: 2.2rem; margin-bottom: 12px; }
+    .cta-section .btn { background: #f5e2b2; color: #1e3a2f; margin-top: 24px; }
+    .cta-section .btn:hover { background: #ffefc0; transform: scale(1.02); }
+    /* Contact section styles */
+    .contact-section { background: #EBE5D9; border-radius: 48px; padding: 60px 32px; text-align: center; margin: 40px 0; }
+    .contact-info { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 32px; font-size: 1.1rem; }
+    .contact-info i { color: #2c6e3c; margin-right: 8px; width: 28px; }
+    .map-container { border-radius: 40px; overflow: hidden; margin: 40px 0 20px; box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1); }
+    iframe { width: 100%; height: 400px; border: 0; display: block; }
+    .footer { background: #1f2b1c; color: #ddd8cd; padding: 60px 0 30px; margin-top: 40px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col img { max-width: 140px; background: #fefcf7; border-radius: 20px; padding: 8px; }
+    .footer-col h4 { color: #f3e9cf; margin-bottom: 20px; font-size: 1.3rem; }
+    .footer-col p, .footer-col a { color: #cbc6b5; text-decoration: none; line-height: 1.6; }
+    .footer-phone { font-size: 1.3rem; font-weight: 600; color: #e7dbb6; }
+    .copyright { text-align: center; border-top: 1px solid #3a4635; padding-top: 32px; font-size: 0.85rem; }
+    .back2top { position: fixed; bottom: 30px; right: 30px; background: #2c6e3c; color: white; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: 0.2s; z-index: 99; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    .back2top.show { opacity: 1; visibility: visible; }
+    .back2top:hover { background: #1f542c; transform: scale(1.05); }
+    @media (max-width: 880px) {
+      .mobile-toggle { display: block; }
+      .nav-links { display: none; width: 100%; flex-direction: column; gap: 20px; padding: 24px 0; text-align: center; }
+      .nav-links.show { display: flex; }
+      .hero h1 { font-size: 2.5rem; }
+      .hero { padding: 70px 0; }
+      .section-title h2 { font-size: 2rem; }
+    }
+    @media (max-width: 540px) {
+      .amenities-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .facilities-grid { grid-template-columns: 1fr; }
+      .contact-info { flex-direction: column; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner container">
+    <div class="logo-area">
+      <img src="https://www.nagarholehomestay.com/wp-content/uploads/2023/12/nagarholehomestay-logo-bg-126x126.png" alt="Nagarhole Homestay Logo">
+      <span>Nagarhole Homestay</span>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+    <div class="nav-links" id="navLinks">
+      <a href="/">Home</a>
+      <a href="/rooms/">Rooms</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="header-phone">
+      <i class="fas fa-phone-alt"></i> 866-097-9577
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Nagarhole Homestay</h1>
+      <p>Cozy wooden cottages, coffee estate trails, and the wild heart of Nagarhole Tiger Reserve — your gateway to nature's serenity.</p>
+      <div class="address">
+        <i class="fas fa-map-marker-alt"></i> Srimangala Hobli, Palleri Post, K Badaga Village, Ponnampet, Kodagu - 571201
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Premium Amenities</h2>
+        <div class="section-sub">Thoughtful comforts for an unforgettable stay</div>
+      </div>
+      <div class="amenities-grid">
+        <div class="amenity-card"><i class="fas fa-parking"></i><h4>Free Parking</h4></div>
+        <div class="amenity-card"><i class="fas fa-wifi"></i><h4>Free Wi-Fi</h4></div>
+        <div class="amenity-card"><i class="fas fa-fire"></i><h4>Bon Fire</h4></div>
+        <div class="amenity-card"><i class="fas fa-cocktail"></i><h4>BBQ Facilities</h4></div>
+        <div class="amenity-card"><i class="fas fa-bacon"></i><h4>KSTDC Approved</h4></div>
+        <div class="amenity-card"><i class="fas fa-futbol"></i><h4>Indoor/Outdoor Games</h4></div>
+        <div class="amenity-card"><i class="fas fa-tree"></i><h4>Coffee Estate Walks</h4></div>
+        <div class="amenity-card"><i class="fas fa-binoculars"></i><h4>Nagarhole Safari</h4></div>
+        <div class="amenity-card"><i class="fas fa-water"></i><h4>Large Hammock</h4></div>
+        <div class="amenity-card"><i class="fas fa-utensils"></i><h4>Authentic Cuisine</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="facilities" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-title">
+        <h2>Experience & Facilities</h2>
+        <div class="section-sub">From delicious meals to thrilling safaris — all within your reach</div>
+      </div>
+      <div class="facilities-grid">
+        <div class="facility-card">
+          <div class="facility-img" style="background-image: url('https://www.nagarholehomestay.com/wp-content/uploads/elementor/thumbs/Canteen-scaled-qx3mk7t4xobn3detrzdyqsj7uuc3409plvmxc5bfko.jpeg');"></div>
+          <div class="facility-content"><h3>Delicious Cooking</h3><p>Authentic Kodava flavors and home-style meals.</p></div>
+        </div>
+        <div class="facility-card">
+          <div class="facility-img" style="background-image: url('https://www.nagarholehomestay.com/wp-content/uploads/elementor/thumbs/private-cottage3-scaled-qx3mve426rmd4h6gitaadz0i3r96mgmtt6uqqkqxlk.jpeg');"></div>
+          <div class="facility-content"><h3>Comfortable Beds</h3><p>Plush bedding and serene cottage interiors.</p></div>
+        </div>
+        <div class="facility-card">
+          <div class="facility-img" style="background-image: url('https://www.nagarholehomestay.com/wp-content/uploads/elementor/thumbs/private-cottage4-scaled-qx3my03x6771dhdx9xwzbbaliadw06zzi43aq8vkbc.jpeg');"></div>
+          <div class="facility-content"><h3>Garden Terrace</h3><p>Relax with a cup of coffee overlooking lush gardens.</p></div>
+        </div>
+      </div>
+      <div class="facilities-grid" style="margin-top: 0;">
+        <div class="facility-card">
+          <div class="facility-img" style="background-image: url('https://www.nagarholehomestay.com/wp-content/uploads/elementor/thumbs/Nagarahole-tiger-reserve-scaled-qx3n27fxqiy7apa3q9bwyr3t5bnzfgorqx4gzsn6hk.jpeg');"></div>
+          <div class="facility-content"><h3>Nagarhole Tiger Safari</h3><p>Witness tigers, elephants with expert naturalists.</p></div>
+        </div>
+        <div class="facility-card">
+          <div class="facility-img" style="background-image: url('https://www.nagarholehomestay.com/wp-content/uploads/elementor/thumbs/nagarholehomestay24-qh061i7qip2z69w0zsxfa5k7sutavrucmd7qv2xrq0.jpeg');"></div>
+          <div class="facility-content"><h3>Irruppu Falls</h3><p>Scenic drive to cascading waterfalls – a refreshing escape.</p></div>
+        </div>
+        <div class="facility-card">
+          <div class="facility-img" style="background-image: url('https://www.nagarholehomestay.com/wp-content/uploads/elementor/thumbs/Tholpatty-wayanad-safari-scaled-qx3n4j3kms4pzzwl5rhpmnzu0m7ngiwvqf6opf753s.jpeg');"></div>
+          <div class="facility-content"><h3>Tholpatty Wayanad Safari</h3><p>Elephants, gaurs, and exotic birds in Kerala's wildlife corridor.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="testimonial">
+      <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+      <i class="fas fa-quote-right"></i>
+      <p>“A hidden gem! The cottages are cozy, the hosts are wonderful, and the coffee estate walks at sunrise are magical. We saw a herd of elephants near the reserve. Absolute luxury in the wild.”</p>
+      <h4>— Mr. John</h4>
+      <div style="margin-top: 12px;">⭐ 4.8 / 5 · Rated by 200+ guests</div>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION (added with id="contact") -->
+  <div class="container">
+    <div id="contact" class="contact-section">
+      <h2 style="font-size: 2rem; margin-bottom: 16px;">Get in Touch</h2>
+      <p style="max-width: 600px; margin: 0 auto;">Have questions or ready to book your stay? Reach out to us anytime.</p>
+      <div class="contact-info">
+        <div><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> 866-097-9577 / 963-206-3042</div>
+        <div><i class="fas fa-envelope"></i> <strong>Email:</strong> info@nagarholehomestay.com</div>
+        <div><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Srimangala Hobli, Palleri Post, Kodagu - 571201</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="cta-section">
+      <h2>Planning a trip to Nagarhole?</h2>
+      <p>Escape to wilderness luxury — secure your stay at our wooden cottages surrounded by coffee plantations.</p>
+      <a href="/rooms/" class="btn">Make Reservation <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="map-container">
+      <iframe src="https://maps.google.com/maps?q=12%C2%B001%2738.9%22N%2076%C2%B002%2730.7%22E&t=m&z=12&output=embed&iwloc=near" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="https://www.nagarholehomestay.com/wp-content/uploads/2023/12/nagarholehomestay-logo-bg-126x126.png" alt="Footer logo">
+        <p style="margin-top: 16px;">A peaceful retreat amidst coffee estates, bordering Nagarhole Tiger Reserve.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <p>Srimangala Hobli, Palleri Post,<br> K Badaga Village, Ponnampet,<br> Kodagu - 571201</p>
+        <p class="footer-phone"><i class="fas fa-phone-alt"></i> 866-097-9577 <br> 963-206-3042</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <p><a href="/">Home</a></p>
+        <p><a href="/rooms/">Rooms & Cottages</a></p>
+        <p><a href="#contact">Contact & Directions</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Nature's Call</h4>
+        <p>Nagarhole Tiger Reserve safari, Irruppu Falls, Tholpetty Wildlife, and coffee plantation tours – adventure awaits.</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2026 Nagarhole Homestay | Luxury Home Stay | Powered by Nature & Hospitality</p>
+    </div>
+  </div>
+</footer>
+
+<div class="back2top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
+
+<script>
+  const toggleBtn = document.getElementById('mobileToggle');
+  const navMenu = document.getElementById('navLinks');
+  if(toggleBtn && navMenu) {
+    toggleBtn.addEventListener('click', () => navMenu.classList.toggle('show'));
+  }
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 400) backBtn.classList.add('show');
+    else backBtn.classList.remove('show');
+  });
+  backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if(targetId === "#" || targetId === "") return;
+      const target = document.querySelector(targetId);
+      if(target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        if(navMenu.classList.contains('show')) navMenu.classList.remove('show');
+      }
+    });
+  });
+</script>
+</body>
+</html>
